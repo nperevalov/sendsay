@@ -1,0 +1,22 @@
+.MultiLineInput-label {
+  color: #999999;
+  display: block;
+  line-height: 20px;
+}
+
+.MultiLineInput-input {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  height: 140px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "San Francisco";
+  font-weight: 400;
+  margin-top: 5px;
+}
+.MultiLineInput-input:focus {
+  border: 2px solid #45a5ff;
+}

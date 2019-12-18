@@ -1,0 +1,75 @@
+import {
+  BEGIN_FILE_DRAG,
+  END_FILE_DRAG,
+  ADD_ATTACHMENT,
+  REMOVE_ATTACHMENT,
+  TO_EMAIL_VALIDATE,
+  FROM_EMAIL_VALIDATE,
+  SEND_COMPLETE,
+  SEND_WAITING,
+  CHANGE_FROM_EMAIL,
+  CHANGE_FROM_NAME,
+  CHANGE_SUBJECT,
+  CHANGE_TEXT,
+  CHANGE_TO_EMAIL,
+  CHANGE_TO_NAME
+} from "../actions/actions";
+
+const initialState = {
+  isDragActive: false,
+  isWaitingResponse: false,
+  msgAttachments: [],
+  msgFromName: "",
+  msgFromEmail: "",
+  msgFromEmailNotValid: "",
+  msgToName: "",
+  msgToEmail: "sdssd@sdsd.s",
+  msgToEmailNotValid: "",
+  msgSubject: "",
+  msgText: "",
+  msgHistory: []
+};
+
+export default function rootReducer(state = initialState, action) {
+  switch (action.type) {
+    case CHANGE_FROM_EMAIL:
+      return { ...state, msgFromEmail: action.value };
+    case CHANGE_FROM_NAME:
+      return { ...state, msgFromName: action.value };
+    case CHANGE_SUBJECT:
+      return { ...state, msgSubject: action.value };
+    case CHANGE_TEXT:
+      return { ...state, msgText: action.value };
+    case CHANGE_TO_EMAIL:
+      return { ...state, msgToEmail: action.value };
+    case CHANGE_TO_NAME:
+      return { ...state, msgToName: action.value };
+
+    case SEND_WAITING:
+      return { ...state, isWaitingResponse: true };
+    case SEND_COMPLETE:
+      return { ...state, isWaitingResponse: false };
+    case TO_EMAIL_VALIDATE:
+      return { ...state, msgToEmailNotValid: action.error };
+    case FROM_EMAIL_VALIDATE:
+      return { ...state, msgFromEmailNotValid: action.error };
+    case BEGIN_FILE_DRAG:
+      return { ...state, isDragActive: true };
+    case END_FILE_DRAG:
+      return { ...state, isDragActive: false };
+    case ADD_ATTACHMENT:
+      return {
+        ...state,
+        msgAttachments: [...state.msgAttachments, action.file]
+      };
+    case REMOVE_ATTACHMENT:
+      return {
+        ...state,
+        msgAttachments: state.msgAttachments.filter(file => {
+          return file.id !== action.id;
+        })
+      };
+    default:
+      return state;
+  }
+}

@@ -1,0 +1,52 @@
+.MessageLog-title {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.MessageLog-data {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+.MessageLog-data-header {
+  display: table-header-group;
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+  color: #666666;
+}
+
+.MessageLog-data-values {
+  display: table-row;
+  padding-bottom: 15px;
+}
+
+.MessageLog-data-date,
+.MessageLog-data-subject,
+.MessageLog-data-status,
+.MessageLog-data-header-date,
+.MessageLog-data-header-subject,
+.MessageLog-data-header-status {
+  display: table-cell;
+  padding-right: 10px;
+}
+
+.MessageLog-data-status,
+.MessageLog-data-header-status {
+  text-align: end;
+}
+.MessageLog-data-status--success {
+  color: #03a100;
+}
+.MessageLog-data-status--error {
+  color: #ff6666;
+}
+.MessageLog-data-status--pending {
+  color: #666666;
+}
+
+.MessageLog-data-subject {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

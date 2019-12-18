@@ -1,0 +1,38 @@
+.AttachedFile {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 365px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.AttachedFile-remove {
+  color: #ff6666;
+  margin-left: auto;
+  flex-basis: 30%;
+}
+.AttachedFile .fa-paperclip {
+  height: 32px;
+  width: 32px;
+  color: #999999;
+  flex-basis: 10%;
+}
+
+.AttachedFile .fa-trash-alt {
+  height: 16px;
+  width: 16px;
+  color: red;
+  margin: 0 5px;
+}
+
+.AttachedFile-filename {
+  text-overflow: ellipsis;
+  flex: 0 0 210px;
+  overflow: hidden;
+}
