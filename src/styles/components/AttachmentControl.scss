@@ -1,0 +1,26 @@
+.AttachmentControl {
+  color: #0055fb;
+  padding: 5px;
+  height: 30px;
+  text-decoration: none;
+  line-height: 30px;
+  border: 2px solid transparent; // фикс сдвига текста линка при появлении границы
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+}
+
+.AttachmentControl:focus {
+  border-color: #45a5ff;
+}
+
+.AttachmentControl:hover {
+  color: #266efb;
+}
+.AttachmentControl .fa-paperclip {
+  margin-right: 5px;
+}
+
+.AttachmentControl--input {
+  display: none;
+}

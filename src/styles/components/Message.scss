@@ -1,0 +1,68 @@
+.Message {
+  /* Rectangle 3.2 */
+
+  box-sizing: border-box;
+  width: 800px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  //  gap: 20px; // работает только в FF
+
+  position: relative; //for overlay
+}
+.Message > * {
+  margin-bottom: 20px;
+}
+.Attachments {
+  margin-bottom: 15px;
+}
+.MultiLineInput-label {
+  margin-bottom: 5px;
+}
+
+.Message > *:last-child {
+  margin-bottom: 0;
+}
+
+.Message-title {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.Message-dragOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px dashed #cccccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.Message-dragOverlay * {
+  pointer-events: none;
+}
+.Message-dragOverlay-title {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.Message-dragOverlay-info {
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+}
