@@ -8,6 +8,8 @@ import MessageLog from "./MessageLog";
 import WaitingBanner from "./WaitingBanner";
 import onStatusUpdate from "../actions/onStatusUpdate";
 
+//запушить на хероку или DO
+
 function App() {
   const isWaitingResponse = useSelector(state => state.isWaitingResponse);
   const dispatch = useDispatch();
