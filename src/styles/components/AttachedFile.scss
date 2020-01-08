@@ -9,22 +9,23 @@
   height: 50px;
   display: flex;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
 }
 
 .AttachedFile-remove {
   color: #ff6666;
   margin-left: auto;
   flex-basis: 30%;
+  text-decoration: none;
 }
-.AttachedFile .fa-paperclip {
+.AttachedFile-paperclip {
   height: 32px;
   width: 32px;
   color: #999999;
   flex-basis: 10%;
 }
 
-.AttachedFile .fa-trash-alt {
+.AttachedFile-trash {
   height: 16px;
   width: 16px;
   color: red;
@@ -34,5 +35,6 @@
 .AttachedFile-filename {
   text-overflow: ellipsis;
   flex: 0 0 210px;
+  padding-left: 10px;
   overflow: hidden;
 }

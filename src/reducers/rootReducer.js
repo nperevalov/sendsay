@@ -45,7 +45,7 @@ export default function rootReducer(state = initialState, action) {
         })
       };
     case ADD_TRACK:
-      return { ...state, msgHistory: [action.value, ...state.msgHistory] }; //FIXIT: feel some shit here
+      return { ...state, msgHistory: [action.value, ...state.msgHistory] };
     case CHANGE_TOTAL_ATTACHMENTS_SIZE:
       return {
         ...state,

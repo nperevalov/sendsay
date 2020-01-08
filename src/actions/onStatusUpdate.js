@@ -16,17 +16,17 @@ export default function onStatusUpdate() {
       });
     });
 
-    sendsay.request(req).then(
-      res => {
+    sendsay
+      .request(req)
+      .then(res => {
         res.result.forEach(value => {
           dispatch(
             updateTrackStatus({ id: value.obj.id, status: value.obj.status })
           );
         });
-      },
-      error => {
+      })
+      .catch(error => {
         console.log(error); // Ошибку выводим в консоль, так как другое не определено
-      }
-    );
+      });
   };
 }

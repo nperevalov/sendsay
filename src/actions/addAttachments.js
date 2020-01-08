@@ -19,21 +19,24 @@ export default function addAttachments(files) {
       return sum + file.size;
     }, 0);
 
-    if (newSize + curAttachSize > 20 * 1024 * 1024) return;
+    if (newSize + curAttachSize > 20 * 1024 * 1024) return; // файлы суммарно >20 МБ не прикрепляем
 
     files.forEach(file => {
-      getBase64(file).then(data => {
-        dispatch(
-          addAttachment({
-            id: nanoid(),
-            name: file.name,
-            size: file.size,
-            data: data
-          })
-        );
-        curAttachSize += file.size;
-        dispatch(changeTotalAttachmentsSize(curAttachSize));
-      });
+      if (file.size > 5 * 1024 * 1024) return; // файлы >5 МБ не прикрепляем
+      getBase64(file)
+        .then(data => {
+          dispatch(
+            addAttachment({
+              id: nanoid(), // уникальный ID чтобы отличать файлы с одинковым именем
+              name: file.name,
+              size: file.size,
+              data: data
+            })
+          );
+          curAttachSize += file.size;
+          dispatch(changeTotalAttachmentsSize(curAttachSize));
+        })
+        .catch(error => console.log(error));
     });
   };
 }

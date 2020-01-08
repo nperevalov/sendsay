@@ -44,16 +44,16 @@ export default function messageSubmit() {
         };
       });
 
-      sendsay.request(sendRequest).then(
-        res => {
+      sendsay
+        .request(sendRequest)
+        .then(res => {
           dispatch(sendComplete());
           dispatch(addNewTrack(res["track.id"], curState.msgSubject));
-        },
-        error => {
+        })
+        .catch(error => {
           console.log(error); // Ошибку выводим в консоль, так как другое не определено
           dispatch(sendComplete());
-        }
-      );
+        });
       dispatch(sendWaiting());
     }
   };

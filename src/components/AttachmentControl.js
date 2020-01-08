@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
+import { ReactComponent as Paperclip } from "../assets/s-paperclip.svg";
 
 import addAttachments from "../actions/addAttachments";
 
@@ -23,17 +22,13 @@ function AttachmentControl() {
   };
 
   return (
-    <a
-      className={"AttachmentControl"}
-      tabIndex={"0"}
-      onClick={onClick}
-      href="#0"
-    >
-      <FontAwesomeIcon icon={faPaperclip} />
+    <a className={"AttachmentControl"} tabIndex={0} onClick={onClick} href="#0">
+      <Paperclip className={"AttachmentControl-paperclip"}></Paperclip>
       Прикрепить файл
       <input
         ref={fileInput}
-        className="AttachmentControl--input"
+        tabIndex={0}
+        className="AttachmentControl-input"
         type="file"
         multiple
         onChange={onFilesAdded}

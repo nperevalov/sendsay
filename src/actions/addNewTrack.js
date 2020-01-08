@@ -7,8 +7,9 @@ export default function addNewTrack(id, subject) {
       action: "track.get",
       id: id
     };
-    sendsay.request(sendRequest).then(
-      res => {
+    sendsay
+      .request(sendRequest)
+      .then(res => {
         dispatch(
           addTrack({
             id: id,
@@ -17,10 +18,9 @@ export default function addNewTrack(id, subject) {
             status: res.obj.status
           })
         );
-      },
-      error => {
+      })
+      .catch(error => {
         console.log(error); // Ошибку выводим в консоль, так как другое не определено
-      }
-    );
+      });
   };
 }

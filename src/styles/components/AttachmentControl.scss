@@ -17,10 +17,15 @@
 .AttachmentControl:hover {
   color: #266efb;
 }
-.AttachmentControl .fa-paperclip {
+.AttachmentControl .AttachmentControl-paperclip {
   margin-right: 5px;
 }
 
-.AttachmentControl--input {
+.AttachmentControl-input {
   display: none;
+}
+.AttachmentControl-paperclip {
+  width: 17px;
+  height: 15px;
+  color: #0055fb;
 }
